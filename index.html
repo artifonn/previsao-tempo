@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/style.css">
   <title>Clima</title>
 </head>
+
 <body>
   <header>
     <h1>Clima Tempo</h1>
   </header>
   <main>
     <div class="input-area">
-      <input type="text">
-      <button class="botao" type="button">Verificar</button>
+      <form action="">
+        <input type="text">
+        <button class="botao" type="button">Verificar</button>
+      </form>
     </div>
+    <div class="result">
+      <div class="titulo">--</div>
+
+      <div class="info">
+        <div class="temp">
+          <div class="tempTitulo">Temperatura</div>
+          <div class="tempInfo">--<sup>C°</sup></div>
+          <img src="" alt="imagem">
+        </div>
+
+        <div class="vento">
+          <div class="ventoTitulo">Vento</div>
+          <div class="ventoInfo"><span>km/h</span></div>
+          <div class="ventoArea">
+            <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aviso"></div>
   </main>
   <footer>
     <div class="footer">
