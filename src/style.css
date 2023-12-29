@@ -25,6 +25,43 @@ h1 {
   justify-content: center;
 }
 
+.result {
+  display: none;
+}
+
+.ventoArea {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ventoPonto {
+  width: 3px;
+  height: 22px;
+  background-color: red;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+}
+
 .footer {
   text-align: center;
+}
+
+.loader {
+  border: 5px solid #f3f3f3; /* Cor do fundo */
+  border-top: 5px solid #3498db; /* Cor do spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
