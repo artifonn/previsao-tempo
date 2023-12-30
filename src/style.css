@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   height: 100vh;
+  background: #87CEEB;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 200px;
 }
 
 main {
@@ -21,12 +32,41 @@ h1 {
   width: 100vw;
   height: 300px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding-top: 40px;
+}
+
+.buscar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 25px;
+  color: #FFF;
+}
+
+.input {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.input:focus {
+  outline: 2px solid #1E90FF ;
+  
+}
+
+.button {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
 }
 
 .result {
   display: none;
+  background: #D3D3D3;
 }
 
 .ventoArea {
