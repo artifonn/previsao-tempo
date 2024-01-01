@@ -1,18 +1,18 @@
 document.querySelector('.buscar').addEventListener('submit', async (event) => {
   event.preventDefault();
-
   let input = document.querySelector('.input').value;
-
+  
   if (input !== '') {
     clearInfo();
-    mensagem('Carregando...');
-
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=${API_TOKEN}=metric&lang=pt_br`;
-
+    elementLoading();
+    
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=${API_TOKEN}&units=metric&lang=pt_br`;
+    
     let req = await fetch(url);
     let res = await req.json();
-
+    
     if (res.cod === 200) {
+      removeElementLoading();
       resultInfo({
         name: res.name,
         pais: res.sys.country,
@@ -23,12 +23,25 @@ document.querySelector('.buscar').addEventListener('submit', async (event) => {
       })
     } else {
       clearInfo();
+      removeElementLoading()
       mensagem('Localização não encontrada. Tente novamente!');
     }
   } else {
     clearInfo();
   }
 });
+
+function elementLoading() {
+  let divLoadivng = document.createElement('div');
+  document.querySelector('.loading').appendChild(divLoadivng).classList.add('loader');
+}
+
+function removeElementLoading() {
+  let loadingElement = document.querySelector('.loading .loader');
+  if (loadingElement) {
+    loadingElement.remove();
+  }
+}
 
 function resultInfo(res) {
   mensagem('');
