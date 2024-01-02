@@ -24,7 +24,7 @@ document.querySelector('.buscar').addEventListener('submit', async (event) => {
     } else {
       clearInfo();
       removeElementLoading()
-      mensagem('Localização não encontrada. Tente novamente!');
+      mensagem('Localização não encontrada!');
     }
   } else {
     clearInfo();
